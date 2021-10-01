@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<content-type xmlns="urn:enonic:xp:model:1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:enonic:xp:model:1.0 https://raw.githubusercontent.com/enonic/xp/master/modules/core/core-api/src/main/resources/META-INF/xsd/model.xsd">
+    <display-name>Artist</display-name>
+    <description>Information about an artist</description>
+    <super-type>base:structured</super-type>
+    <form>
+        <input name="name" type="TextLine">
+            <label>Name</label>
+            <help-text>
+          The artist's name (if different from their professional moniker).
+            </help-text>
+        </input>
+        <input type="TextArea" name="about">
+            <label>About the artist</label>
+        </input>
+        <input name="favoriteAnimal" type="ContentSelector">
+            <label>Favorite animal</label>
+            <occurrences minimum="0" maximum="1"/>
+            <config>
+                <allowContentType>animal</allowContentType>
+                <allowPath>${site}/animals/</allowPath>
+                <treeMode>true</treeMode>
+            </config>
+        </input>
+        <option-set name="mixedMediaA">
+            <label>Mixed Media A</label>
+            <options minimum="0" maximum="0">
+                <option name="discography">
+                    <label>Discography</label>
+                    <items>
+                        <item-set name="albums">
+                            <label>Album</label>
+                            <occurrences minimum="0" maximum="0" />
+                            <items>
+                                <input name="title" type="TextLine">
+                                    <label>Title</label>
+                                    <occurrences minimum="1" maximum="1" />
+                                </input>
+                                <input type="TextLine" name="releaseYear">
+                                    <label>Release year</label>
+                                </input>
+                            </items>
+                        </item-set>
+                    </items>
+                </option>
+                <option name="filmography">
+                    <label>Filmography</label>
+                    <items>
+                        <item-set name="films">
+                            <label>Film</label>
+                            <occurrences minimum="0" maximum="0" />
+                            <items>
+                                <input name="title" type="TextLine">
+                                    <label>Title</label>
+                                    <occurrences minimum="1" maximum="1" />
+                                </input>
+                                <input type="TextLine" name="role">
+                                    <label>Role</label>
+                                    <occurrences minimum="0" maximum="0" />
+                                </input>
+                            </items>
+                        </item-set>
+                    </items>
+                </option>
+            </options>
+        </option-set>
+    </form>
+</content-type>

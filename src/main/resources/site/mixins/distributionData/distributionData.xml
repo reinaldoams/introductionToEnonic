@@ -1,0 +1,10 @@
+<mixin>
+  <display-name>Distribution data</display-name>
+  <form>
+
+    <input type="TextArea" name="notes">
+      <label>Notes</label>
+    </input>
+
+  </form>
+</mixin>

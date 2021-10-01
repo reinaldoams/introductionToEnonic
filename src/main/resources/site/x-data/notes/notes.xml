@@ -1,0 +1,9 @@
+<x-data>
+    <display-name>Notes</display-name>
+    <form>
+        <input type="TextLine" name="notes">
+            <label>Notes</label>
+            <occurrences minimum="0" maximum="0"/>
+        </input>
+    </form>
+</x-data>

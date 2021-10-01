@@ -1,0 +1,7 @@
+<styles>
+    <image name="conteditor-style-grayscale">
+      <display-name>Grayscale</display-name>
+      <aspect-ratio>1:1</aspect-ratio>
+      <filter>hsbcolorize(0x000000); grayscale(); border(6, 0x000000)</filter>
+    </image>
+  </styles>
